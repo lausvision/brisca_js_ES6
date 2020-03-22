@@ -7,4 +7,4 @@ ES6
 
 
 ## Author ✒️
-<img src="signature_magenta_and_cyan.png" alt="vector">
+Laura Molina.
