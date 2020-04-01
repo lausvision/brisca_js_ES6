@@ -10,7 +10,7 @@ export default class Carta{
       }
 }
 
-
+/*
 Carta.palo = new Set([
     'oros',
     'copas',
@@ -30,4 +30,4 @@ Carta.numero = new Set([
    {num: 'caballo', valor: 3}, 
    {num: 'rey', valor: 4}, 
 ])
-
+*/

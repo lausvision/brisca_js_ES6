@@ -1,6 +1,21 @@
 
 import Carta from "./carta.js";
 
+/*
+export const valor = {
+    as:  11,
+    dos: null,
+    tres: 10,
+    cuatro:null,
+    cinco: null,
+    seis: null,
+    siete: null,
+    sota: 2,
+    caballo:3,
+    rey:4
+     
+};*/
+
 export default class Baraja{
 
  constructor(){
@@ -53,7 +68,28 @@ export default class Baraja{
 
 }
 
-// Obtengo numero entero aleatorio
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-  }
+let palosArray = [
+    'oros',
+    'copas',
+    'espadas',
+    'bastos'
+];
+
+let numeroArray=[
+    'as',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    'sota',
+    'caballo',
+    'rey'
+];
+
+let randomNumberPalos = Math.floor(Math.random()*palosArray.length);
+
+let randomNumber = Math.floor(Math.random()*numeroArray.length);
+
+Carta (numeroArray[randomNumber], palosArray[randomNumberPalos]);
