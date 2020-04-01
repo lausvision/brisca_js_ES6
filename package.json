@@ -1,18 +1,20 @@
 {
   "name": "brisca_js_ES6",
-  "version": "0.0.1",
-  "description": "",
+  "version": "1.0.0",
+  "description": "Popular spanish card game La Brisca into a JavaScript library.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lausvision/brisca_js_ES6.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "webpack": "^4.42.0",
-    "webpack-cli": "^3.3.11"
-  }
+  "bugs": {
+    "url": "https://github.com/lausvision/brisca_js_ES6/issues"
+  },
+  "homepage": "https://github.com/lausvision/brisca_js_ES6#readme"
 }
