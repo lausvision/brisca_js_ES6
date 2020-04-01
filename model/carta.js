@@ -1,6 +1,6 @@
 
 
-class Card{
+export default class Carta{
     constructor(numero,palo){
         this.numero=numero;
         this.palo=palo;
@@ -11,15 +11,14 @@ class Card{
 }
 
 
-
-Card.palo = new Set([
+Carta.palo = new Set([
     'oros',
     'copas',
     'espadas',
     'bastos'
 ]);
 
-Card.numero = new Set([
+Carta.numero = new Set([
    {num: 'as', valor: 11}, 
    {num: '2', valor: null}, 
    {num: '3', valor: 10}, 
@@ -31,3 +30,4 @@ Card.numero = new Set([
    {num: 'caballo', valor: 3}, 
    {num: 'rey', valor: 4}, 
 ])
+
