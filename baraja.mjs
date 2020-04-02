@@ -1,20 +1,6 @@
 
 import Carta from "./carta.mjs";
 
-/*
-export const valor = {
-    as:  11,
-    dos: null,
-    tres: 10,
-    cuatro:null,
-    cinco: null,
-    seis: null,
-    siete: null,
-    sota: 2,
-    caballo:3,
-    rey:4
-     
-};*/
 
 export default class Baraja{
 
@@ -68,6 +54,13 @@ export default class Baraja{
 
 }
 
+
+
+
+
+export function volverCartaRandom() {
+
+
 let palosArray = [
     'oros',
     'copas',
@@ -94,4 +87,8 @@ let randomNumber = Math.floor(Math.random()*numeroArray.length);
 
 let cartaRandom= new Carta (numeroArray[randomNumber], palosArray[randomNumberPalos]);
 
-console.log(cartaRandom);
+return cartaRandom;
+
+} 
+
+console.log(volverCartaRandom());
