@@ -1,4 +1,7 @@
 
+import Player from "./modul/player.mjs";
+import volverCartaRandom from "./modul/cartaRandom.mjs";
+let CartaRandom = new volverCartaRandom();
 
 
 
@@ -35,5 +38,13 @@ standard_input.on('data', function (data) {
 function EstadoBrisca(playersnum){
 
     console.log('Iniciamos juego...');
+
+    if (playersnum==='dos\n'||playersnum==='2\n'){
+        let player1 = new Player ('jugador1',0,[CartaRandom,CartaRandom,CartaRandom] );
+        console.log(player1);
+    }else {
+        let player1 = new Player ('jugador1',0,[volverCartaRandom(),volverCartaRandom(),volverCartaRandom()] );
+        console.log(player1);
+    }
 
 }
