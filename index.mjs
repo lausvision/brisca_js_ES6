@@ -1,6 +1,6 @@
 
-import Player from "./modul/player.mjs";
-import {volverCartaRandom} from "./modul/cartaRandom.mjs";
+
+import { juego } from "./juego.mjs";
 
 
 
@@ -28,28 +28,10 @@ standard_input.on('data', function (data) {
     {
         // Print user input in console.
         console.log('Tenemos : ' + data + ' jugadores   ^-^ ');
-        EstadoBrisca(data);
+        juego(data);
 
     }else{
         console.log('numero de jugadores no valido');
     }
 });
 
-function EstadoBrisca(playersnum){
-
-    console.log('Iniciamos juego...');
-
-    if (playersnum==='dos\n'||playersnum==='2\n'){
-        let player1 = new Player ('jugador1',0,[volverCartaRandom(),volverCartaRandom(),volverCartaRandom()] );
-        let player2 = new Player ('jugador2',0,[volverCartaRandom(),volverCartaRandom(),volverCartaRandom()] );
-
-        console.log(player1);
-    }else {
-        let player1 = new Player ('jugador1',0,[volverCartaRandom(),volverCartaRandom(),volverCartaRandom()] );
-        let player2 = new Player ('jugador2',0,[volverCartaRandom(),volverCartaRandom(),volverCartaRandom()] );
-        let player3 = new Player ('jugador3',0,[volverCartaRandom(),volverCartaRandom(),volverCartaRandom()] );
-        let player4 = new Player ('jugador4',0,[volverCartaRandom(),volverCartaRandom(),volverCartaRandom()] );
-        console.log(player3);
-    }
-
-}
