@@ -1,7 +1,7 @@
 
 import Player from "./modul/player.mjs";
-import volverCartaRandom from "./modul/cartaRandom.mjs";
-let CartaRandom = new volverCartaRandom();
+import {volverCartaRandom} from "./modul/cartaRandom.mjs";
+
 
 
 
@@ -40,11 +40,16 @@ function EstadoBrisca(playersnum){
     console.log('Iniciamos juego...');
 
     if (playersnum==='dos\n'||playersnum==='2\n'){
-        let player1 = new Player ('jugador1',0,[CartaRandom,CartaRandom,CartaRandom] );
+        let player1 = new Player ('jugador1',0,[volverCartaRandom(),volverCartaRandom(),volverCartaRandom()] );
+        let player2 = new Player ('jugador2',0,[volverCartaRandom(),volverCartaRandom(),volverCartaRandom()] );
+
         console.log(player1);
     }else {
         let player1 = new Player ('jugador1',0,[volverCartaRandom(),volverCartaRandom(),volverCartaRandom()] );
-        console.log(player1);
+        let player2 = new Player ('jugador2',0,[volverCartaRandom(),volverCartaRandom(),volverCartaRandom()] );
+        let player3 = new Player ('jugador3',0,[volverCartaRandom(),volverCartaRandom(),volverCartaRandom()] );
+        let player4 = new Player ('jugador4',0,[volverCartaRandom(),volverCartaRandom(),volverCartaRandom()] );
+        console.log(player3);
     }
 
 }

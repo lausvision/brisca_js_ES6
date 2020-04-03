@@ -1,4 +1,4 @@
-
+import Carta from "./carta.mjs";
 
 function volverCartaRandom() {
 
@@ -33,7 +33,7 @@ function volverCartaRandom() {
     
     } 
     
-    console.log(volverCartaRandom());
+   // console.log(volverCartaRandom());
     
     export { volverCartaRandom };
     
