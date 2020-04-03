@@ -1,6 +1,6 @@
 import Player from "./modul/player.mjs";
-import {volverCartaRandom} from "./modul/cartaRandom.mjs";
-import Carta from "./carta.mjs";
+
+import Baraja from "./modul/baraja.mjs";
 
 
 
@@ -8,20 +8,21 @@ function juego (playersnum){
 
     console.log('Iniciamos juego...');
 
- 
+    let baraja = new Baraja();
+    console.log(baraja.randomCard());
 
     if (playersnum==='dos\n'||playersnum==='2\n'){
-        let player1 = new Player ('jugador1',0,[volverCartaRandom(),volverCartaRandom(),volverCartaRandom()] );
-        let player2 = new Player ('jugador2',0,[volverCartaRandom(),volverCartaRandom(),volverCartaRandom()] );
+        let player1 = new Player ();
+        let player2 = new Player ();
 
 
-        juego2(player1,player2);
+        juego2(player1,player2,baraja);
        // console.log(player1);
     }else {
-        let player1 = new Player ('jugador1',0,[volverCartaRandom(),volverCartaRandom(),volverCartaRandom()] );
-        let player2 = new Player ('jugador2',0,[volverCartaRandom(),volverCartaRandom(),volverCartaRandom()] );
-        let player3 = new Player ('jugador3',0,[volverCartaRandom(),volverCartaRandom(),volverCartaRandom()] );
-        let player4 = new Player ('jugador4',0,[volverCartaRandom(),volverCartaRandom(),volverCartaRandom()] );
+        let player1 = new Player ();
+        let player2 = new Player ();
+        let player3 = new Player ();
+        let player4 = new Player ();
 
         juego4();
       //  console.log(player3);
@@ -33,9 +34,9 @@ function juego (playersnum){
 }
 
 
-function juego2(player1,player2){
+function juego2(player1,player2,baraja){
     
-    const  triunfo = volverCartaRandom();
+    const  triunfo = baraja.randomCard;
     let tapate = [];
 
     let player1Array =[];
@@ -47,8 +48,6 @@ function juego2(player1,player2){
     player1.estado
 
 }
-
-
 
 
 
