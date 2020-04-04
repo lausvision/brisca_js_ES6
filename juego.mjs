@@ -2,6 +2,8 @@ import Player from "./modul/player.mjs";
 
 import Baraja from "./modul/baraja.mjs";
 
+import valorDeCarta from "./modul/valorDeCarta.mjs";
+
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
   }
@@ -52,8 +54,8 @@ function juego2(player1,player2,baraja){
     let player1Array =[];
     let player2Array =[];
 
-    let puntuacion1;
-    let puntuacion2;
+   /* let puntuacion1;
+    let puntuacion2;*/
 
     player1.puntos = 0;
     player2.puntos=0;
@@ -72,25 +74,49 @@ function juego2(player1,player2,baraja){
     tapete= [player1.estado[getRandomInt(3)],player2.estado[getRandomInt(3)]];
     console.log('Tapete actual: '+tapete);
 
-    if (tapete[0].palo===triunfo.palo){
-        console.log('jugador 1 se queda tapete');
-        player1Array.push(tapete[0]);
-        player1Array.push(tapete[1]);
-        console.log('array1:'+player1Array);
-
-    }else if(tapete[1].palo===triunfo.palo){
-        console.log('jugador 2 se queda tapete');
-        player2Array.push(tapete[0]);
-        player2Array.push(tapete[1]);
-        console.log('array2:'+player2Array);
-    }
 
     if(tapete[0].palo===tapete[1].palo){
-        if(tapete[0].numero>tapete[1].numero){
+        if(valorDeCarta(tapete[0].numero)>valorDeCarta(tapete[1].numero)){
             console.log('jugador 1 se queda tapete');
             player1Array.push(tapete[0]);
             player1Array.push(tapete[1]);
             console.log('array1:'+player1Array);
+        }else {
+            console.log('jugador 2 se queda tapete');
+            player2Array.push(tapete[0]);
+            player2Array.push(tapete[1]);
+            console.log('array1:'+player2Array);
+        }
+    }else{
+
+        if (tapete[0].palo===triunfo.palo){
+            console.log('jugador 1 se queda tapete');
+            player1Array.push(tapete[0]);
+            player1Array.push(tapete[1]);
+            console.log('array1:'+player1Array);
+
+        }else if(tapete[1].palo===triunfo.palo){
+            console.log('jugador 2 se queda tapete');
+            player2Array.push(tapete[0]);
+            player2Array.push(tapete[1]);
+            console.log('array2:'+player2Array);
+        }else{
+
+            let val1=valorDeCarta(tapete[0].numero);
+            let val2=valorDeCarta(tapete[1].numero);
+
+            if (val1>val2){
+                console.log('jugador 1 se queda tapete');
+                player1Array.push(tapete[0]);
+                player1Array.push(tapete[1]);
+                console.log('array1:'+player1Array);
+            }else{
+                console.log('jugador 2 se queda tapete');
+                player2Array.push(tapete[0]);
+                player2Array.push(tapete[1]);
+                console.log('array2:'+player2Array);
+            }
+
         }
     }
  
