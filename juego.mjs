@@ -78,6 +78,20 @@ function juego2(player1,player2,baraja){
         player1Array.push(tapete[1]);
         console.log('array1:'+player1Array);
 
+    }else if(tapete[1].palo===triunfo.palo){
+        console.log('jugador 2 se queda tapete');
+        player2Array.push(tapete[0]);
+        player2Array.push(tapete[1]);
+        console.log('array2:'+player2Array);
+    }
+
+    if(tapete[0].palo===tapete[1].palo){
+        if(tapete[0].numero>tapete[1].numero){
+            console.log('jugador 1 se queda tapete');
+            player1Array.push(tapete[0]);
+            player1Array.push(tapete[1]);
+            console.log('array1:'+player1Array);
+        }
     }
  
     prova++;

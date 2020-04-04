@@ -10,6 +10,11 @@ export default class Carta{
       }
 }
 
+
+
+
+
+
 /*
 Carta.palo = new Set([
     'oros',

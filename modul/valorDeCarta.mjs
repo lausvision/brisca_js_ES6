@@ -1,0 +1,12 @@
+
+
+function valorDeCarta() {
+
+
+
+
+}
+    
+
+export { valorDeCarta };
+    
