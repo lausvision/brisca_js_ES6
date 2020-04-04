@@ -2,7 +2,7 @@ import Player from "./modul/player.mjs";
 
 import Baraja from "./modul/baraja.mjs";
 
-import valorDeCarta from "./modul/valorDeCarta.mjs";
+import {valorDeCarta} from "./modul/valorDeCarta.mjs";
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
@@ -28,7 +28,7 @@ function juego (playersnum){
 
 
         juego2(player1,player2,baraja);
-       // console.log(player1);
+       
     }else {
         let player1 = new Player ();
         let player2 = new Player ();
@@ -36,7 +36,7 @@ function juego (playersnum){
         let player4 = new Player ();
 
         juego4();
-      //  console.log(player3);
+      
     }
     
     
@@ -60,19 +60,38 @@ function juego2(player1,player2,baraja){
     player1.puntos = 0;
     player2.puntos=0;
 
+    //variables para la eliminacion de las cartas del estado de los jugadores
+    let x,y;
+
+
+    //primeras tres cartas que se dan a los jugadores 1 y 2
+    player1.estado=[baraja.randomCard(),baraja.randomCard(),baraja.randomCard()];
+    console.log('Cartas que recibe jugador 1: ' + player1.estado);
+
+    player2.estado=[baraja.randomCard(),baraja.randomCard(),baraja.randomCard()];
+    console.log('Cartas que recibe jugador 2: ' + player2.estado);
+
+
     let prova=0;
     while (prova<3){
     console.log('Puntuación jugador 1: '+ player1.puntos);
     console.log('Puntuación jugador 2: '+ player2.puntos);
 
-    player1.estado=[baraja.randomCard(),baraja.randomCard(),baraja.randomCard()];
-    console.log('Cartas que recibe jugador 1: ' + player1.estado);
-
-    player2.estado=[baraja.randomCard(),baraja.randomCard(),baraja.randomCard()];
-    console.log('Cartas que recibe jugador 1: ' + player2.estado);
-
+  
+    //sacamos las cartas al tapete de juego de forma random de los dos jugadores
     tapete= [player1.estado[getRandomInt(3)],player2.estado[getRandomInt(3)]];
     console.log('Tapete actual: '+tapete);
+
+    //quitamos las cartas del tapate del estado de los jugadores -> va bien
+    x=player1.estado.findIndex(x=>x===tapete[0]);
+    player1.estado.splice(x,1);
+    console.log(player1.estado+ '   cartas que tiene 1');
+
+    y=player2.estado.findIndex(x=>x===tapete[0]);
+    player2.estado.splice(x,1);
+    console.log(player2.estado+ '   cartas que tiene 2');
+
+    
 
 
     if(tapete[0].palo===tapete[1].palo){
@@ -119,6 +138,10 @@ function juego2(player1,player2,baraja){
 
         }
     }
+
+    //repartimos 1 carta mas a los jugadores ya que quedaron con 2
+    player1.estado.push(baraja.randomCard());
+    player2.estado.push(baraja.randomCard());
  
     prova++;
     }
