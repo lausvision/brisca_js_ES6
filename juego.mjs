@@ -2,6 +2,15 @@ import Player from "./modul/player.mjs";
 
 import Baraja from "./modul/baraja.mjs";
 
+function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+
+
+
+
+
+
 
 
 function juego (playersnum){
@@ -9,7 +18,7 @@ function juego (playersnum){
     console.log('Iniciamos juego...');
 
     let baraja = new Baraja();
-    console.log(baraja.randomCard());
+    
 
     if (playersnum==='dos\n'||playersnum==='2\n'){
         let player1 = new Player ();
@@ -36,8 +45,9 @@ function juego (playersnum){
 
 function juego2(player1,player2,baraja){
     
-    const  triunfo = baraja.randomCard;
-    let tapate = [];
+    const  triunfo = baraja.randomCard();
+    console.log('TRIUNFO:'+triunfo);
+    let tapete = [];
 
     let player1Array =[];
     let player2Array =[];
@@ -45,8 +55,33 @@ function juego2(player1,player2,baraja){
     let puntuacion1;
     let puntuacion2;
 
-    player1.estado
+    player1.puntos = 0;
+    player2.puntos=0;
 
+    let prova=0;
+    while (prova<3){
+    console.log('Puntuación jugador 1: '+ player1.puntos);
+    console.log('Puntuación jugador 2: '+ player2.puntos);
+
+    player1.estado=[baraja.randomCard(),baraja.randomCard(),baraja.randomCard()];
+    console.log('Cartas que recibe jugador 1: ' + player1.estado);
+
+    player2.estado=[baraja.randomCard(),baraja.randomCard(),baraja.randomCard()];
+    console.log('Cartas que recibe jugador 1: ' + player2.estado);
+
+    tapete= [player1.estado[getRandomInt(3)],player2.estado[getRandomInt(3)]];
+    console.log('Tapete actual: '+tapete);
+
+    if (tapete[0].palo===triunfo.palo){
+        console.log('jugador 1 se queda tapete');
+        player1Array.push(tapete[0]);
+        player1Array.push(tapete[1]);
+        console.log('array1:'+player1Array);
+
+    }
+ 
+    prova++;
+    }
 }
 
 
