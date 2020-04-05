@@ -15,31 +15,20 @@ function getRandomInt(max) {
 
 
 
-function juego (playersnum){
+function juego (){
 
     console.log('Iniciamos juego...');
 
     let baraja = new Baraja();
     
 
-    if (playersnum==='dos\n'||playersnum==='2\n'){
+
         let player1 = new Player ();
         let player2 = new Player ();
 
 
         juego2(player1,player2,baraja);
-       
-    }else {
-        let player1 = new Player ();
-        let player2 = new Player ();
-        let player3 = new Player ();
-        let player4 = new Player ();
-
-        juego4();
-      
-    }
-    
-    
+          
 
 
 }

@@ -13,25 +13,25 @@ standard_input.setEncoding('utf-8');
 
 // Prompt user to input data in console.
 console.log("¡Hola! Este es el juego de la Brisca :)");
-console.log("¿cuantos jugadores vais a ser? ¿dos o cuatro?");
-console.log("Si quieres pausar el juego escribe: exit.");
+console.log("¿vais a ser dos jugadores?(y/n)");
+console.log("Salir del juego (e) ");
 
 // When user input data and click enter key.
 standard_input.on('data', function (data) {
 
     // User input exit.
-    if(data === 'exit\n'){
+    if(data === 'e\n'|| data=== 'exit\n'){
         // Program exit.
         console.log("User input complete, program exit.");
         process.exit();
-    }else if (data==='dos\n' || data=== 'cuatro\n' || data==='2\n' || data=== '4\n')
+    }else if (data==='y\n' || data=== 'yes\n')
     {
         // Print user input in console.
-        console.log('Tenemos : ' + data + ' jugadores   ^-^ ');
+        console.log('EMPECEMOS ^-^ ');
         juego(data);
 
     }else{
-        console.log('numero de jugadores no valido');
+        console.log('si no sois dos, cread grupos para ser dos equipos');
     }
 });
 
