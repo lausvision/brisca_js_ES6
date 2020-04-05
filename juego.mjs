@@ -49,7 +49,7 @@ function juego2(player1,player2,baraja){
     
     const  triunfo = baraja.randomCard();
     console.log('TRIUNFO:'+triunfo);
-    let tapete = [];
+    let tapete = [];console.log(baraja);
 
     let player1Array =[];
     let player2Array =[];
@@ -71,9 +71,10 @@ function juego2(player1,player2,baraja){
     player2.estado=[baraja.randomCard(),baraja.randomCard(),baraja.randomCard()];
     console.log('Cartas que recibe jugador 2: ' + player2.estado);
 
-
+    
+    console.log(baraja.lenght+'EOEOEOEOEOOOEOOEOOEOEOE');
     let prova=0;
-    while (prova<3){
+    while (prova<17){
     console.log('Puntuación jugador 1: '+ player1.puntos);
     console.log('Puntuación jugador 2: '+ player2.puntos);
 
@@ -145,6 +146,9 @@ function juego2(player1,player2,baraja){
  
     prova++;
     }
+
+    console.log(baraja);
+
 }
 
 
