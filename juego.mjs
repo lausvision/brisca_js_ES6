@@ -54,11 +54,10 @@ function juego2(player1,player2,baraja){
     let player1Array =[];
     let player2Array =[];
 
-   /* let puntuacion1;
-    let puntuacion2;*/
+   
 
-    player1.puntos = 0;
-    player2.puntos=0;
+    let puntos1=0;
+    let puntos2=0;
 
     //variables para la eliminacion de las cartas del estado de los jugadores
     let x,y;
@@ -72,11 +71,10 @@ function juego2(player1,player2,baraja){
     console.log('Cartas que recibe jugador 2: ' + player2.estado);
 
     
-    console.log(baraja.lenght+'EOEOEOEOEOOOEOOEOOEOEOE');
+   
     let prova=0;
     while (prova<17){
-    console.log('Puntuación jugador 1: '+ player1.puntos);
-    console.log('Puntuación jugador 2: '+ player2.puntos);
+   
 
   
     //sacamos las cartas al tapete de juego de forma random de los dos jugadores
@@ -84,12 +82,12 @@ function juego2(player1,player2,baraja){
     console.log('Tapete actual: '+tapete);
 
     //quitamos las cartas del tapate del estado de los jugadores -> va bien
-    x=player1.estado.findIndex(x=>x===tapete[0]);
+    x=player1.estado.findIndex(a=>a===tapete[0]);
     player1.estado.splice(x,1);
     console.log(player1.estado+ '   cartas que tiene 1');
 
-    y=player2.estado.findIndex(x=>x===tapete[0]);
-    player2.estado.splice(x,1);
+    y=player2.estado.findIndex(b=>b===tapete[0]);
+    player2.estado.splice(y,1);
     console.log(player2.estado+ '   cartas que tiene 2');
 
     
@@ -143,9 +141,27 @@ function juego2(player1,player2,baraja){
     //repartimos 1 carta mas a los jugadores ya que quedaron con 2
     player1.estado.push(baraja.randomCard());
     player2.estado.push(baraja.randomCard());
+
+
+
+    
+    
  
     prova++;
     }
+
+    for (let i=0; i<player1Array.length;i++){
+
+        puntos1=puntos1+valorDeCarta(player1Array[i].numero);
+        player1.puntos=puntos1;
+    }
+    for (let z=0; z<player2Array.length;z++){
+
+        puntos2=puntos2+valorDeCarta(player2Array[z].numero);
+        player2.puntos=puntos2;
+    }
+    console.log('Puntuación jugador 1: '+ player1.puntos);
+    console.log('Puntuación jugador 2: '+ player2.puntos);
 
     console.log(baraja);
 
