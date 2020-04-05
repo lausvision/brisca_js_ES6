@@ -154,6 +154,14 @@ function juego2(player1,player2,baraja){
 
     console.log(baraja);
 
+    if (player1.puntos>player2.puntos){
+        console.log('Jugador 1 GANA! :]');
+    }else if (player1.puntos<player2.puntos){
+        console.log('Jugador 2 GANA! :]');
+    }else{
+        console.log('EMPATE ¿ ·-· ?')
+    }
+
 }
 
 
