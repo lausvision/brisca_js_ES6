@@ -84,8 +84,8 @@ function laManoGanadora(tapete,player1Array,player2Array,triunfo,player1,player2
 
         }
     }
-    console.log(player1.estado+ '           cartas que tiene 1');
-    console.log(player2.estado+ '           cartas que tiene 2');
+    console.log( 'Cartas que tiene jugador1 ->   '+player1.estado);
+    console.log( 'Cartas que tiene jugador2 ->   '+player2.estado);
 }
 
 
@@ -146,8 +146,8 @@ function juego(){
   
     
 
-    console.log(player1.estado+ '           cartas que tiene 1');
-    console.log(player2.estado+ '           cartas que tiene 2');
+    console.log( 'Cartas que tiene jugador1 ->   '+player1.estado);
+    console.log( 'Cartas que tiene jugador2 ->   '+player2.estado);
 
     
     
@@ -155,12 +155,13 @@ function juego(){
 
     player2.estado[2]=triunfo;
 
-    console.log(player1.estado+ '           cartas que tiene 1');
-    console.log(player2.estado+ '           cartas que tiene 2');
+    console.log( 'Cartas que tiene jugador1 ->   '+player1.estado);
+    console.log( 'Cartas que tiene jugador2 ->   '+player2.estado);
+    
+    
 
     laManoGanadora(tapete,player1Array,player2Array,triunfo,player1,player2); //añadido
-    laManoGanadora(tapete,player1Array,player2Array,triunfo,player1,player2); //añadido
-    laManoGanadora(tapete,player1Array,player2Array,triunfo,player1,player2); //añadido
+    
 
     for (let i=0; i<player1Array.length;i++){
 
