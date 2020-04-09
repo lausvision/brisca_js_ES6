@@ -13,14 +13,17 @@ function laManoGanadora(tapete,player1Array,player2Array,triunfo,player1,player2
     //variables para la eliminacion de las cartas del estado de los jugadores
     let x,y;
 
+    console.log('estado antes de todo   '+player1.estado.length+' '+ player2.estado.length);
     //sacamos las cartas al tapete de juego de forma random de los dos jugadores
-    if (player1.estado.length<3 && player2.estado.length<3){
-        tapete= [player1.estado[getRandomInt(3)],player2.estado[getRandomInt(3)]];
+    if (player1.estado.length==3 && player2.estado.length==3){
        
-    }else if (player1.estado.length<2 && player2.estado.lenght<2){
-        tapete= [player1.estado[Math.random()],player2.estado[Math.random()]];
+        tapete= [player1.estado[getRandomInt(3)],player2.estado[getRandomInt(3)]];
         
-    }else{
+    }/*else if (player1.estado.length==2 && player2.estado.lenght==2){
+        console.log('segundooooooooooo casooooooooooo');
+        tapete= [player1.estado[getRandomInt(1)],player2.estado[getRandomInt(1)]];
+        
+    }*/else{
         tapete= [player1.estado[0],player2.estado[0]];
         
     }
@@ -86,6 +89,8 @@ function laManoGanadora(tapete,player1Array,player2Array,triunfo,player1,player2
     }
     console.log( 'Cartas que tiene jugador1 ->   '+player1.estado);
     console.log( 'Cartas que tiene jugador2 ->   '+player2.estado);
+
+
 }
 
 
@@ -146,9 +151,7 @@ function juego(){
   
     
 
-    console.log( 'Cartas que tiene jugador1 ->   '+player1.estado);
-    console.log( 'Cartas que tiene jugador2 ->   '+player2.estado);
-
+    
     
     
     }
@@ -160,8 +163,9 @@ function juego(){
     
     
 
-    laManoGanadora(tapete,player1Array,player2Array,triunfo,player1,player2); //añadido
-    
+    laManoGanadora(tapete,player1Array,player2Array,triunfo,player1,player2); //3 con triunfo añadido
+    laManoGanadora(tapete,player1Array,player2Array,triunfo,player1,player2); //2
+    laManoGanadora(tapete,player1Array,player2Array,triunfo,player1,player2); //1 y fin
 
     for (let i=0; i<player1Array.length;i++){
 
