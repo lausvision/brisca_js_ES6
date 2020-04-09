@@ -13,7 +13,7 @@ function laManoGanadora(tapete,player1Array,player2Array,triunfo,player1,player2
     //variables para la eliminacion de las cartas del estado de los jugadores
     let x,y;
 
-    console.log('estado antes de todo   '+player1.estado.length+' '+ player2.estado.length);
+    
     //sacamos las cartas al tapete de juego de forma random de los dos jugadores
     if (player1.estado.length==3 && player2.estado.length==3){
        

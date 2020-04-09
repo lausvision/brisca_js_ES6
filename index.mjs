@@ -24,7 +24,7 @@ standard_input.on('data', function (data) {
         // Program exit.
         console.log("User input complete, program exit.");
         process.exit();
-    }else if (data==='y\n' || data=== 'yes\n')
+    }else if (data==='y\n' || data=== 'yes\n'|| data=== 'Y\n')
     {
         // Print user input in console.
         console.log('EMPECEMOS ^-^ ');
