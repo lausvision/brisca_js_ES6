@@ -8,80 +8,7 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
   }
 
-
-
-
-
-
-
-
-function juego (){
-
-    console.log('Iniciamos juego...');
-
-    let baraja = new Baraja();
-    
-
-
-        let player1 = new Player ();
-        let player2 = new Player ();
-
-
-        juego2(player1,player2,baraja);
-          
-
-
-}
-
-
-function juego2(player1,player2,baraja){
-    
-    const  triunfo = baraja.randomCard();
-    console.log('TRIUNFO:'+triunfo);
-    let tapete = [];console.log(baraja);
-
-    let player1Array =[];
-    let player2Array =[];
-
-   
-
-    let puntos1=0;
-    let puntos2=0;
-
-    //variables para la eliminacion de las cartas del estado de los jugadores
-    let x,y;
-
-
-    //primeras tres cartas que se dan a los jugadores 1 y 2
-    player1.estado=[baraja.randomCard(),baraja.randomCard(),baraja.randomCard()];
-    console.log('Cartas que recibe jugador 1: ' + player1.estado);
-
-    player2.estado=[baraja.randomCard(),baraja.randomCard(),baraja.randomCard()];
-    console.log('Cartas que recibe jugador 2: ' + player2.estado);
-
-    
-   
-    let prova=0;
-    while (prova<17){
-   
-
-  
-    //sacamos las cartas al tapete de juego de forma random de los dos jugadores
-    tapete= [player1.estado[getRandomInt(3)],player2.estado[getRandomInt(3)]];
-    console.log('Tapete actual: '+tapete);
-
-    //quitamos las cartas del tapate del estado de los jugadores -> va bien
-    x=player1.estado.findIndex(a=>a===tapete[0]);
-    player1.estado.splice(x,1);
-    console.log(player1.estado+ '   cartas que tiene 1');
-
-    y=player2.estado.findIndex(b=>b===tapete[0]);
-    player2.estado.splice(y,1);
-    console.log(player2.estado+ '   cartas que tiene 2');
-
-    
-
-
+function laManoGanadora(tapete,player1Array,player2Array,triunfo){
     if(tapete[0].palo===tapete[1].palo){
         if(valorDeCarta(tapete[0].numero)>valorDeCarta(tapete[1].numero)){
             console.log('jugador 1 se queda tapete');
@@ -126,18 +53,113 @@ function juego2(player1,player2,baraja){
 
         }
     }
+}
 
-    //repartimos 1 carta mas a los jugadores ya que quedaron con 2
+
+
+
+
+
+function juego (){
+
+    console.log('Iniciamos juego...');
+
+    let baraja = new Baraja();
+    
+
+
+        let player1 = new Player ();
+        let player2 = new Player ();
+
+
+        juego2(player1,player2,baraja);
+          
+
+
+}
+
+
+function juego2(player1,player2,baraja){
+    
+    const  triunfo = baraja.randomCard();
+    console.log('TRIUNFO:'+triunfo);
+    let tapete = [];
+    
+    console.log(baraja.baraja.length);
+    console.log(baraja);
+
+
+    let player1Array =[];
+    let player2Array =[];
+
+   
+
+    let puntos1=0;
+    let puntos2=0;
+
+    //variables para la eliminacion de las cartas del estado de los jugadores
+    let x,y;
+
+
+    //primeras tres cartas que se dan a los jugadores 1 y 2
+    player1.estado=[baraja.randomCard(),baraja.randomCard(),baraja.randomCard()];
+    console.log('Cartas que recibe jugador 1: ' + player1.estado);
+
+    player2.estado=[baraja.randomCard(),baraja.randomCard(),baraja.randomCard()];
+    console.log('Cartas que recibe jugador 2: ' + player2.estado);
+
+    
+   
+
+
+    
+    while (baraja.baraja.length>0){
+
+    //sacamos las cartas al tapete de juego de forma random de los dos jugadores
+    if (player1.estado.length<3 && player2.estado.length<3){
+        tapete= [player1.estado[getRandomInt(3)],player2.estado[getRandomInt(3)]];
+       
+    } else if (player1.estado.length<2 && player2.estado.lenght<2){
+        tapete= [player1.estado[Math.random()],player2.estado[Math.random()]];
+        
+    }else{
+        tapete= [player1.estado[0],player2.estado[0]];
+        
+    }
+  
+    console.log(player1.estado+ '           cartas que tiene 1');
+    console.log(player2.estado+ '           cartas que tiene 2');
+
+    
+    console.log('Tapete actual: '+tapete);
+
+    //quitamos las cartas del tapate del estado de los jugadores -> va bien
+    x=player1.estado.findIndex(a=>a===tapete[0]);
+    player1.estado.splice(x,1);
+    
+    y=player2.estado.findIndex(b=>b===tapete[0]);
+    player2.estado.splice(y,1);
+    
+    
+    laManoGanadora(tapete,player1Array,player2Array,triunfo);
+    
+
+    
     player1.estado.push(baraja.randomCard());
     player2.estado.push(baraja.randomCard());
 
+  
+    
 
+    console.log(player1.estado+ '           cartas que tiene 1');
+    console.log(player2.estado+ '           cartas que tiene 2');
 
     
     
- 
-    prova++;
     }
+
+
+
 
     for (let i=0; i<player1Array.length;i++){
 
