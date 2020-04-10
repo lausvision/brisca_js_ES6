@@ -19,11 +19,11 @@ function laManoGanadora(tapete,player1Array,player2Array,triunfo,player1,player2
        
         tapete= [player1.estado[getRandomInt(3)],player2.estado[getRandomInt(3)]];
         
-    }/*else if (player1.estado.length==2 && player2.estado.lenght==2){
-        console.log('segundooooooooooo casooooooooooo');
-        tapete= [player1.estado[getRandomInt(1)],player2.estado[getRandomInt(1)]];
+    }else if (player1.estado.length==2 && player2.estado.lenght==2){
         
-    }*/else{
+        tapete= [player1.estado[getRandomInt(2)],player2.estado[getRandomInt(2)]];
+        
+    }else{
         tapete= [player1.estado[0],player2.estado[0]];
         
     }
